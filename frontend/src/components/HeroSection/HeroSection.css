@@ -1,0 +1,90 @@
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110vh;
+    width: 100%;
+    z-index: -100;
+    background-color: black;
+}
+.background img{
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.mainhead{
+    height: min(250px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100vh;
+    justify-content: center;
+    margin-right: 2%;
+    color: white;
+}
+
+.heading{
+    margin-top: 100px;
+    line-height: 1;
+    font-size: 12vmax;
+    text-align: right;
+}
+
+.subhead{
+
+    font-family:'inter';
+    font-weight: 400;
+    font-size: 1.7vmax;
+    text-align: right;
+    width: 60%;
+}
+
+.btn{
+    cursor: pointer;
+     font-size: 24px;
+    border: none;
+    outline: none;
+    padding: 12px 50px;
+    background-color:#FFF175;
+    border-radius: 17px;
+    
+}
+
+.herobtn{
+    font-family: 'inter';
+    font-weight: 500;
+    font-size:1.5vmax ;
+    margin-top: 30px;
+  
+    
+}
+
+
+@media screen and (max-width: 500px){
+      /* HERO */
+    
+      .background img{
+        object-fit: cover;
+        object-position: -400px;
+        opacity: 0.5;
+        
+    }
+    .heading{
+        margin: 0;
+        font-size: 90px;
+        text-align: center;
+        width: 100%;    
+    }
+    .subhead{
+        width: 90%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .mainhead{
+       
+        align-items: center;
+        
+    }
+}

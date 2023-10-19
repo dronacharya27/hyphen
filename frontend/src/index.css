@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Just Another Hand', cursive;
+    
+}
+:root{
+    
+    --kritiblue:#86F8EA;
+    --kritiyellow:#FFF175;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

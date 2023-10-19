@@ -1,0 +1,219 @@
+.checkoutmain{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--kritiblue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkouttop{
+    margin-top: 5%;
+    height: 80%;
+    width: 80%;
+    background-color: var(--kritiyellow);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vmax;
+    gap: 1vw;
+}
+.checkoutleft{
+    border-radius: 20px;
+    flex: 1.8;
+    background-color: var(--kritiyellow);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+.checkoutright{
+    border-radius: 20px;
+    flex: 1.3;
+    background-color: var(--kritiyellow);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+}
+
+.lefttop{
+    border-radius: 20px;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftbottom{
+    border-radius: 20px;
+    background-color: white;
+    width: 100%;
+    height: 80%;
+}
+
+.checkouttopitems{
+
+    font-size: 2vmax;
+    width: 100%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+  
+    
+}
+
+.rightbottom{
+    border-radius: 20px;
+    background-color: white;
+    width: 100%;
+    height: 20%;
+  
+}
+
+.righttop{
+    border-radius: 20px;
+    background-color: var(--kritiyellow);
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+}
+
+.rightcheckoutheading{
+    padding-left: 2%;
+   
+    background-color: white;
+    height: 25%;
+    border-radius: 20px;
+    font-size: 2vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.checkoutitemlist{
+     background-color: white;
+    padding: 0 1vmax;
+ 
+    height: 75%;
+    border-radius: 20px;
+    overflow-y: scroll;
+
+}
+::-webkit-scrollbar{
+    /* background-color: grey; */
+    width: 0.5vmax;
+   
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    /* border-radius: 20px; */
+   
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+ 
+    border-radius: 20px;
+  
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(29, 27, 27);
+  }
+.checkoutitems{
+    margin: 1vw 0;
+    width: 100%;
+    height: 35%;
+    background-color: white;
+    display: flex;
+}
+.checkoutimage{
+    
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+.checkoutimage img{
+    
+    height: 100%;
+    width: 100%;
+    object-fit:contain;
+    
+}
+.checkoutdetails{
+    
+    height: 100%;
+    width: 100%;
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+
+}
+.checkoutitemprice{
+    /* background-color: blue; */
+    font-family: 'inter';
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.checkoutproductdetail{
+    font-size: 1.5vmax;
+    
+   height: 60%;
+    width: 100%;
+}
+.adddelete{
+   
+   height: 40%;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 5px;
+}
+.quantity{
+    height: 80%;
+    background-color: var(--kritiyellow);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 20px;
+    width: 50%;
+}
+.deleteproduct{
+    text-align: center;
+    height: 80%;
+    background-color: var(--kritiyellow);
+    border-radius: 20px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.checkoutbtn{
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.5vmax;
+    height: 1.5vmax;
+    width: 1.5vmax;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+}
+.quantity span{
+    text-align: center;
+    font-family: 'inter';
+    font-size: 1.3  vmax;
+}

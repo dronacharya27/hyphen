@@ -1,0 +1,152 @@
+
+.productpage{
+   background-color: var(--kritiblue);
+   
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.productleft{
+    background-image: var(--url);
+    
+   background-position: left;
+   
+    width: 100%;
+    flex: 1;
+    position: relative;
+}
+.productleftinitial{
+    background-image: url('/Products/product.webp');
+}
+.productimage{
+    height: 100%;
+    width: 80%;
+     position: absolute;
+     overflow: hidden;
+     right: 0;
+}
+.productimage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+    transition: all 0.5s;
+}
+.effectimg{
+    transform: scale(1.1);
+    transition: all 0.5s;
+   
+}
+.borderimg{
+    transform: scale(1.1);
+    transition: all 0.5s;
+    border:1px solid black;
+    
+}
+
+.productimagelist{
+    /* margin-left: 1vmax; */
+    height: 100%;
+    width: 20%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(81, 92, 91, 0.356);
+    backdrop-filter: blur(7px);
+    
+}
+
+.productimgitems{
+    width:80%;
+    height:8vmax;
+    cursor: pointer;
+    
+    
+   
+}
+.imgli{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+.productright{
+    padding: 0 2.6vmax;
+    background-color: var(--kritiblue);
+    
+    width: 100%;
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productdetailpage{
+    margin-top: 4vmax;
+    height: 80%;
+    width: 100%;
+    background-color: var(--kritiblue);
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+}
+.productname{
+
+    height: 100%;
+    background-color: white;
+    flex: 0.7;
+    line-height: 2.5vmax;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vmax;
+    border-radius: 20px;
+   
+}
+.productheaddiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    
+}
+.productprice{
+    height: 100%;
+    font-size: 3vmax;
+}
+.producthead{
+    text-align: center;
+    font-size: 3vmax;
+}
+.productsubhead{
+    text-align: center;
+    font-size: 2.3vmax;
+}
+.productdetail{
+   border-radius: 20px;
+    height: 100%;
+    background-color: white;
+    flex: 2.8;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    
+   padding: 1vmax 1vmax;
+   text-align: justify;
+}
+.detailsubhead{
+    font-family: 'inter';
+    font-size: 1.3vmax;
+    font-weight: 400;
+}
+.productactions{
+    
+    height: 100%;
+    flex: 0.5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2vmax;
+    padding: 10px;
+}
