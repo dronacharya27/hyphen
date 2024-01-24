@@ -33,6 +33,7 @@
 }
 
 .leftcontent{
+    
     display: flex;
    align-items: center;
    justify-content: center;
@@ -54,6 +55,7 @@
 }
 
 .kritimageleft{
+    
     width: 110%;
     height: 110%;
     object-fit: cover;
@@ -62,13 +64,14 @@
 }
 
 .contentbtn{
-    font-size: 3vmax;
+    font-size: 2vmax;
    margin-top: 10px;
     cursor: pointer;
     
    
 }
 .productcontent{
+    font-family: 'Just Another Hand', cursive;
     height: auto;
     width: 100%;
     display: flex;
@@ -131,6 +134,7 @@
 
 }
 .contentP{
+    font-family: 'Just Another Hand', cursive;
     transition: all 0.3s;
     opacity: 1;
 }

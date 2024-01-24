@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import './ProductShowCase.css'
 import { Link } from 'react-router-dom'
+import { useLoginDataContext } from '../../Context/LoginContext'
 const ProductShowCase = () => {
+  const {progress,setProgress} = useLoginDataContext()
   const handleeffectleft =()=>{
 
     
@@ -34,7 +36,7 @@ const ProductShowCase = () => {
                     <p className='contentP'>BARRIER<br />CREAM</p>
                     <div className="productcontent">
                       Strengthens skin barrier,<br /> deeply hydrates <br /> & locks-in moisture
-                      <Link to='/productpage/0/All-I-NEED-SUNSCREEN'> <button className='contentbtn btn'>SHOP NOW</button></Link>
+                      <Link to='/productpage/5/BARRIER-CARE-FACE-CREAM'> <button className='contentbtn btn' onClick={()=>setProgress(100)}>SHOP NOW</button></Link>
                     </div>
                     
                   
@@ -55,7 +57,7 @@ const ProductShowCase = () => {
                     <p className='contentP'>ALL I NEED</p>
                     <div className="productcontent">
                     Shield up with 12Hr  <br />broad-spectrum protection <br /> & moisturization.
-                    <Link to='/productpage/2/BARRIER-CARE-CREAM'>   <button className='contentbtn btn' >SHOP NOW</button></Link>
+                    <Link to='/productpage/3/ALL-I-NEED-SUNSCREEN'>   <button className='contentbtn btn' onClick={()=>setProgress(100)} >SHOP NOW</button></Link>
                     </div>
             </div>
         

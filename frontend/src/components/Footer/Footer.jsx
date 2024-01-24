@@ -31,7 +31,7 @@ const Footer = () => {
                     <div className="borderdiv">
                     <div className="part3top">Contact Us <br /> <p>letshyphen@kriti.com</p> </div>
                     <div className="part3bottom">Follow Us
-                    <div><i class="ri-instagram-fill"></i><i class="ri-twitter-x-fill"></i><i class="ri-facebook-box-fill"></i></div>
+                    <div><i className="ri-instagram-fill"></i><i className="ri-twitter-x-fill"></i><i className="ri-facebook-box-fill"></i></div>
                     </div>
                     </div>
                     

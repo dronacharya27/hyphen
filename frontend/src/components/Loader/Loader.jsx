@@ -2,13 +2,15 @@ import React from 'react'
 import axios from 'axios'
 import  { useState,useEffect } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useCookies } from 'react-cookie';
 
 const Loader = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const navigate = useNavigate()
     const code =searchParams.get("code")
 
-  
+    const [cookie,setCookie,removeCookie] = useCookies(['token','refresh'])
+
     
     console.log(code);
       useEffect(()=>{
@@ -21,9 +23,9 @@ const Loader = () => {
               
           const {data:res} = await axios.post(gurl)   
           console.log(res);
-          localStorage.setItem('token',JSON.stringify(res.access_token))
-          localStorage.setItem('refresh',JSON.stringify(res.refresh_token))
-          const access = localStorage.getItem('token')
+          setCookie('token',JSON.stringify(res.access_token))
+          setCookie('refresh',JSON.stringify(res.refresh_token))
+          const access = cookie.token
           const gurl2 = `https://www.googleapis.com/oauth2/v3/userinfo?access_token=${access}`
           const {data:res2} = await axios.post(gurl2)
           console.log(res2);

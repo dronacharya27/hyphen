@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from 'react'
 import './Products.css'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
+import { useProductContext } from '../../Context/ProductContext'
+import { useQuery, useQueryClient } from 'react-query'
+import { useCartContext } from '../../Context/CartContext'
+import { useLoginDataContext } from '../../Context/LoginContext'
+
 const Products = () => {
-  const [data,setData] = useState([])
-  const getproduct = async()=>{
-    const url = 'http://127.0.0.1:8000/api/product/'
-    try {
-      const {data:res} = await axios.get(url)
-      setData(res)
-     
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  useEffect(()=>{
-    getproduct()
-  },[])
+
+  const {products,data,isError,isLoading} = useProductContext()
+  const {add_to_cart,state,cookie} = useCartContext()
+  const {progress, setProgress} = useLoginDataContext()
   return (
     <div id='products'>
       <div className='productsmain'>
         <div className='productheading'><p>PRODUCTS</p></div>
-        <div className='productlist'>
-          {data.map((e,index)=>(
-             <div className="productcard">  <Link to={`/productpage/${index}/${e.product_name.trim().split(" ").join('-')}`}> <div className="cardimg"><img src={e.product_main_img} alt="" /></div></Link> <div className='productcartdetail'><p>{e.product_name}</p> <button className='btn cardbtn'><i class="ri-shopping-cart-2-fill"></i></button></div> </div>
-          ))}
+        
+        {
+        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+<div className='productlist'>
+        {products.map((e,index)=>(
+             <div className="productcard" key={index}>  
+             <Link to={`/productpage/${e.id}/${e.product_name.trim().split(" ").join('-')}`}> 
+             <div className="cardimg"><img src={e.product_main_img} alt="" onClick={()=>setProgress(100)}/></div></Link> 
+             <div className='productcartdetail'><p>{e.product_name}</p> 
+             <button className='btn cardbtn' onClick={()=>add_to_cart(e.id,e)}><i className="ri-shopping-cart-2-fill"></i></button>
+             </div> 
+             {console.log()}
+             {state.cart.length!=0  && (JSON.parse(localStorage.getItem('cart')).cart.find((f)=>f.id==e.id))? <p>{JSON.parse(localStorage.getItem('cart')).cart.find((f)=>f.id==e.id).product_quantity}</p>:console.log('empty')}
+             </div>
+          ))}</div> }
+
+          
             
-        </div>
+        
 
       </div>
     </div>

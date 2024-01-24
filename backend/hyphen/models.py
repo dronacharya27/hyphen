@@ -67,10 +67,17 @@ class Product(models.Model):
     product_head_title = models.CharField(max_length=255)
     product_sub_title = models.CharField(max_length=255)
     product_description = models.CharField(max_length=2000)
+    product_what_it =models.CharField(max_length=500,blank=True,null=True,default='')
+    product_what_does =models.CharField(max_length=500,blank=True,null=True,default='')
+    product_how_does =models.CharField(max_length=500,blank=True,null=True,default='')
     product_ingredient = models.CharField(max_length=2000)
+    product_use = models.CharField(max_length=250)
+    product_how_use = models.CharField(max_length=250,blank=True,null=True,default='')
+    product_when_use = models.CharField(max_length=250,blank=True,null=True,default='')
     product_use = models.CharField(max_length=250)
     product_price = models.IntegerField()
     product_main_img = models.ImageField(upload_to='images/',null=True,blank=True)
+    product_quantity =models.IntegerField(default=1)
     def __str__(self):
         return self.product_name
     

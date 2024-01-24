@@ -2,6 +2,10 @@ import React, { useContext, useState } from 'react'
 import './LoginModal.css'
 import { LoginDataContext, useLoginDataContext } from '../../Context/LoginContext'
 import { useNavigate } from 'react-router-dom'
+import { GoogleLogin } from '@react-oauth/google';
+
+
+
 
 const LoginModal = ({islogin,setLogin}) => {
   const navigate = useNavigate()
@@ -54,7 +58,18 @@ const LoginModal = ({islogin,setLogin}) => {
         
         <div className="socials">
             <div className="continue"><span>---------------- or continue with ---------------- </span></div>
-            <div className='socialbtn'>  <div className="logocover"><div className="logodiv" onClick={handlegoogle}><img src="google.png" alt="" /></div></div> <div className="logocover"> <div className="logodiv"><img src="facebook.png" alt="" /></div></div>  </div>
+            <div className='socialbtn'>  
+            <GoogleLogin
+  onSuccess={credentialResponse => {
+    handlegoogle(credentialResponse,navigate())
+    setLogin(false)
+  }}
+  onError={() => {
+    console.log('Login Failed');
+  }}
+  useOneTap
+/>
+</div>
         </div>
     </div>
 </div>

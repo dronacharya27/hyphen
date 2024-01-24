@@ -5,13 +5,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'inter';  
+    
     
 
 }
 
 .productlist{
-    
+  
     height: 70vh;
     width: 100%;
     background-color:#FFF175;
@@ -34,6 +34,7 @@
     transform: scale(1.07);
 }
 .productcard{
+    
     height: fit-content;
 }
 .cardimg img{
@@ -43,6 +44,7 @@
 }
 
 .productheading{
+    
     margin-top: 20vh;
     border-top-right-radius: 20px;
     display: flex;
@@ -52,11 +54,12 @@
     width: 15vmax;
     background-color: #FFF175;
     
-    font-size: 3vmax;
+    font-size: 2vmax;
     padding-top: 10px;
 }
 
 .productcartdetail{
+    
     height: 4vmax;
     margin-left: 3px;
     font-size: 2vmax;
@@ -67,6 +70,7 @@
     
 }
 .productcartdetail p{
+    font-family: 'Just Another Hand', cursive;
     width: 10vw;
 }
 

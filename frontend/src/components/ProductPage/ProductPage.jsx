@@ -3,44 +3,34 @@ import "./ProductPage.css";
 import Navbar from "../Navbar/Navbar";
 import axios from 'axios'
 import { useParams } from "react-router-dom";
-
+import { useProductContext } from "../../Context/ProductContext";
+import Footer from "../Footer/Footer";
 
 const ProductPage = () => {
+  const {products,isError,isLoading} = useProductContext()
   const params = useParams()
   console.log(params);
-  const[image,setmage] = useState([{id:'',image:''}])
+  console.log(products)
+  
   const [Image, setImage] = useState('');
-  const img = document.querySelector(".proimg");
+  
   const productpage = document.querySelector('.productpage')
+  
 
-  const[data,setData]=useState([])
-  const url = 'http://127.0.0.1:8000/api/product/'
-
-  const func1 = async()=>{
-    try {
-      const {data:res} = await axios.get(url)
-      console.log(res);
-      setData(res[params.id])
-      setmage(res[params.id].product_img)
-      setImage(`${res[params.id].product_main_img}`)
-      
-    } catch (error) {
-      console.log(error);
-    }
-      
+  const url = `http://127.0.0.1:8000/api/product/${params.id}`
+useEffect(()=>{
+  if (products) {
+    products.find((e)=>e.id==params.id).product_img.slice(0,1).map((e,index) => (
+      setImage(e.image)
+       
+     ))
   }
-  useEffect(()=>{
-    func1()
-    
-  },[])
-
-
+ 
+},[products])
   
+ 
+ 
 
-  
-
-  
-  
     const handleImage = (e) => {
       setImage(e.image);
       document.querySelector('.productleft').classList.remove('productleftinitial')
@@ -51,10 +41,10 @@ const ProductPage = () => {
 
   const effectImage = (e) => {
     
-    img.classList.toggle("effectimg");
-    const proimage = image.filter((el)=>el.id==e.id)
+    document.querySelector(".proimg").classList.toggle("effectimg");  
+    const proimage = products.find((e)=>e.id==params.id).product_img.filter((el)=>el.id==e.id)
     document.querySelector(`.imgli${proimage[0].id}`).classList.add("borderimg");
-    const najota = image.filter((el)=>el.id!=e.id)
+    const najota = products.find((e)=>e.id==params.id).product_img.filter((el)=>el.id!=e.id)
     najota.map(e=>(
       document.querySelector(`.imgli${e.id}`).classList.remove("borderimg")
     ))
@@ -62,59 +52,126 @@ const ProductPage = () => {
   return (
     <div>
       <Navbar home={false}/>
+     
       <div className="productpage">
         <div className="productleft productleftinitial">
           <div className="productimage">
-            <img className="proimg" src={Image} alt="" />
+          {
+        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+        <>
+       
+         <img className="proimg" src={Image} alt="" />
+         </>
+       
+        }
+            
           </div>
+          {
+        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
           <div className="productimagelist">
-            {image.map((e) => (
-              <>
-                <div className="productimgitems" >
-                  {" "}
-                  <img
-                    className={`imgli imgli${e.id}` }
-                    src={e.image}
-                    alt=""
-                    onClick={() => handleImage(e)}
-                   
-                  />
-                </div>
-              </>
-            ))}
-          </div>
+          
+        {products.find((e)=>e.id==params.id).product_img.map((e,index) => (
+          
+          <>
+         
+            <div className="productimgitems" key={index}>
+              {" "}
+              {console.log(`imgli${e.id}`)}
+              <img
+                className={`imgli imgli${e.id}` }
+                src={e.image}
+                alt=""
+                onClick={() => handleImage(e)}
+                key={index}
+              />
+            </div>
+          </>
+        ))}
+        
+            
+          </div>}
         </div>
         <div className="productright">
-          <div className="productdetailpage">
+        {
+        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+        <div className="productdetailpage">
             <div className="productname">
+              
               <div className="productheaddiv">
-                <span className="producthead">
-                  {data.product_head_title} <br />
-                </span>
-                <span className="productsubhead">
-                {data.product_sub_title}
-                </span>
+                <div className="producthead">
+                  {products.find((e)=>e.id==params.id).product_head_title} <br />
+                </div>
+                <div className="productsubhead">
+                {products.find((e)=>e.id==params.id).product_sub_title}
+                </div>
+                <div className="productprice">
+                <div>Rs. {products.find((e)=>e.id==params.id).product_price}/-</div>
               </div>
-              <div className="productprice">
-                <span>Rs. {data.product_price}</span>
               </div>
+              
             </div>
             <div className="productdetail">
               <div className="detailsubhead">
-                {data.product_description}
+              
+             
+                  <div>
+                  <h3>What It Is?</h3>
+                 <p>  {products.find((e)=>e.id==params.id).product_what_it} </p>
+                </div>
+                <div>
+                  <h3>What It Does?</h3>
+                <p> {products.find((e)=>e.id==params.id).product_what_does}</p>  
+                </div>
+                <div>
+               <h3>How It Does?</h3>
+               <p>{products.find((e)=>e.id==params.id).product_how_does}</p>   
+                </div>
+                
+        
+               
+                
               </div>
+             <div className="using">
+             <div className="use">
+                <div>
+                  <h3>How To Use</h3>
+                {products.find((e)=>e.id==params.id).product_how_use} 
+               
+                <h3>When To Use</h3>
+                {products.find((e)=>e.id==params.id).product_when_use}
+                </div>
+              </div>
+              <div className="ingredients">
+             
+              <div>
+              <h3> Ingredients</h3>
+           
+                  
+                  <p>{products.find((e)=>e.id==params.id).product_ingredient}</p>
+                  </div>
+               
+               
+              </div>
+             </div>
+             
             </div>
             <div className="productactions">
-              <div className="actions">
-                <button className="btn">Add to cart</button>
-              </div>
-              <div className="actions">
+            <div className="actions">
                 <button className="btn">Buy Now</button>
               </div>
+              <div className="actions">
+                <button className="btn cartbtn">Add to cart</button>
+              </div>
+              
             </div>
           </div>
+        }
+          
         </div>
       </div>
+
+      
+   
     </div>
   );
 };

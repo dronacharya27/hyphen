@@ -1,6 +1,7 @@
 
 .productpage{
-   background-color: var(--kritiblue);
+   /* background-color: var(--kritiblue); */
+   background-color: #ec797e;
    
     height: 100vh;
     width: 100%;
@@ -16,7 +17,7 @@
     position: relative;
 }
 .productleftinitial{
-    background-image: url('/Products/product.webp');
+    background-image: url('/Products/product2.webp');
 }
 .productimage{
     height: 100%;
@@ -40,8 +41,7 @@
 .borderimg{
     transform: scale(1.1);
     transition: all 0.5s;
-    border:1px solid black;
-    
+    border:1px solid black;    
 }
 
 .productimagelist{
@@ -75,78 +75,177 @@
 .productright{
     padding: 0 2.6vmax;
     background-color: var(--kritiblue);
-    
+    background-color: rgb(255, 254, 254);
     width: 100%;
+    height: 100%;
     flex: 1.2;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* overflow: hidden; */
+
+
 }
 .productdetailpage{
-    margin-top: 4vmax;
-    height: 80%;
+    height: 100%;
     width: 100%;
-    background-color: var(--kritiblue);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1vmax;
+   
+    
 }
 .productname{
 
-    height: 100%;
-    background-color: white;
-    flex: 0.7;
-    line-height: 2.5vmax;
+    
+    margin-top: 20px;
+    margin-bottom: 15px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1vmax;
-    border-radius: 20px;
    
+
 }
 .productheaddiv{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+   
+    width: 90%;
     
 }
 .productprice{
-    height: 100%;
-    font-size: 3vmax;
+    width: 100%;
+   
+    margin-top: 1vmax;
+    display: flex;
+    align-items: center;
+    font-size: 2.5vmax;
+    font-weight: 900;
+    color: #9faf0d;
 }
 .producthead{
-    text-align: center;
-    font-size: 3vmax;
+   
+    font-size: 2vmax;
+    font-weight: 700;
 }
 .productsubhead{
-    text-align: center;
-    font-size: 2.3vmax;
+    color: #747474;
+    font-size: 1vmax;
 }
 .productdetail{
-   border-radius: 20px;
-    height: 100%;
-    background-color: white;
-    flex: 2.8;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-    
-   padding: 1vmax 1vmax;
+
+   
+
+   
+   
+   
+   
    text-align: justify;
 }
 .detailsubhead{
+   
+  
     font-family: 'inter';
-    font-size: 1.3vmax;
+    font-size: 1vmax;
     font-weight: 400;
+    width: 90%;
+}
+.detailsubhead div{
+    margin-top: 0.5vmax;
+    
+   
+}
+.detailsubhead h3{
+    color: #575757;
+}
+.detailsubhead p{
+    font-size: 0.8vmax;
+    color: #747474;
+}
+.using{
+   margin-top: 2vmax;
+    display: flex;
+    border: 1px solid #747474;
+    height: 40%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.ingredients{
+   
+    font-family: 'inter';
+    font-size: 0.8vmax;
+    font-weight: 400;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    overflow-y: scroll;
+}
+.ingredients h3{
+    margin-bottom: 2px;
+    font-size: 1vmax;
+}
+.ingredients p{
+    font-weight: 300;
+}
+.use{
+    display: flex;
+
+    border-right: 1px solid #747474;
+    font-family: 'inter';
+    font-size: 0.8vmax;
+    font-weight: 400;
+    width: 100%;
+    padding: 12px;
+   
+}
+.use h3{
+    margin-bottom: 2px;
+    font-size: 1vmax;
+}
+.use h3:nth-child(2){
+   
+    margin-top: 10px;
 }
 .productactions{
     
-    height: 100%;
-    flex: 0.5;
+    bottom: 2%;
+    position: fixed;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 2vmax;
     padding: 10px;
+    width: 50%;
 }
+.actions{
+    width: 100%;
+    height: 100%;
+    
+}
+.actions .btn{
+    width: 100%;
+   
+}
+
+
+.productbottom{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+
+.btn{
+    filter: drop-shadow(#0000002f 0px 1px 2px) !important;
+}
+.cartbtn{
+    color: #747474 !important;
+    background-color: white !important;
+    border: 1.5px solid #747474  !important;
+    transition: 300ms color !important;
+  
+
+}
+.cartbtn:hover{
+    background-color: var(--kritiyellow) !important;
+    color: #000000 !important;
+    border: 1.5px solid var(--kritiyellow) !important;
+    transition: 300ms color !important;
+}
+

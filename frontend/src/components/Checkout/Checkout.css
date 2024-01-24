@@ -53,10 +53,13 @@
     background-color: white;
     width: 100%;
     height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .checkouttopitems{
-
+    font-family: 'Just Another Hand', cursive;
     font-size: 2vmax;
     width: 100%;
     display: flex;
@@ -91,7 +94,7 @@
     background-color: white;
     height: 25%;
     border-radius: 20px;
-    font-size: 2vmax;
+    font-size: 1.5vmax;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -118,13 +121,13 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: grey;
+    background:#d9d8d8 ;
  
     border-radius: 20px;
   
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(29, 27, 27);
+    background: rgb(74, 73, 73);
   }
 .checkoutitems{
     margin: 1vw 0;
@@ -167,7 +170,7 @@
     align-items: center;
 }
 .checkoutproductdetail{
-    font-size: 1.5vmax;
+    font-size: 1vmax;
     
    height: 60%;
     width: 100%;
@@ -216,4 +219,46 @@
     text-align: center;
     font-family: 'inter';
     font-size: 1.3  vmax;
+}
+
+.empty_cart{
+    font-size: 2vmax;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_total{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1vmax;
+    height: 100%;
+    width: 100%;
+    font-size: 1.5vmax;
+}
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.address{
+
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.addressafter{
+    display: flex;
 }
