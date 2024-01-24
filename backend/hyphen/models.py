@@ -76,7 +76,7 @@ class Product(models.Model):
     product_when_use = models.CharField(max_length=250,blank=True,null=True,default='')
     product_use = models.CharField(max_length=250)
     product_price = models.IntegerField()
-    product_main_img = models.ImageField(upload_to='images/',null=True,blank=True)
+    product_main_img = models.ImageField(upload_to='hyphen/',null=True,blank=True)
     product_quantity =models.IntegerField(default=1)
     def __str__(self):
         return self.product_name
