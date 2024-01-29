@@ -69,6 +69,7 @@
     height: 100%;
 }
 .inputfields{
+    
     width: 100%;
     height: 65%;
     display: flex;
@@ -172,4 +173,12 @@
 
 .continue{
     font-size: 1vmax
+}
+
+.errormsg{
+    color: red;
+    font-family: 'inter',sans-serif;
+    font-size: 1vmax;
+    position: absolute;
+    bottom: 0;
 }

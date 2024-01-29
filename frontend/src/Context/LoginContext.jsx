@@ -12,8 +12,10 @@ const initialstate = {
     re_password:''
 }
 
-const URL = 'http://127.0.0.1:8000/api/auth/'
+const URL = 'http://dron2708.pythonanywhere.com/api/auth/'
 const LoginDataContextProvider = ({children}) => {
+  const[error_msg,Seterror_msg]=useState([])
+  const [loading,setLoading] = useState(false)
 const [state,dispatch] = useReducer(LoginReducer,initialstate)
 const [cookie,setCookie,removeCookie] = useCookies(['token','refresh'])
 
@@ -31,32 +33,74 @@ const handledata = (e)=>{
 const handlesignup =  async(setSignup,signup) =>{
   const url = URL+'users/'
   const {name,email,password,re_password} = state
-
-  try {
-    const {data:res} = await axios.post(url,state)
-    console.log(res);
-    setSignup(!signup)
-  } catch (error) {
-    console.log(error);
-  }
+  const data = {name,email,password,re_password}
+  setLoading(true)
+    try {
+        const {data:res} = await axios.post(url,data)
+        console.log(res);
+        setLoading(false)
+        setSignup(!signup)
+      } catch (error) {
+        setLoading(false)
+        console.log(error);
+        const error_message = error.response.data
+        let keys = []
+        for (let key in error_message){
+            if (error_message.hasOwnProperty(key)){
+                keys.push(key)
+            }
+            keys.map(e=>
+                Seterror_msg(error_message[e]))
+            
+        
+       }
+       
+      }
 }
 // LOGIN
 const handlelogin =  async(setLogin,islogin) =>{
   const url = URL+'jwt/create/'
   const {email,password} = state
-
+ const data = {email,password}
+  const vurl = URL+'jwt/verify/'
+  setLoading(true)
   try {
-    const {data:res} = await axios.post(url,state)
+    const {data:res} = await axios.post(url,data)
     console.log(res);
-    setCookie('token',JSON.stringify(res.access))
-    setCookie('refresh',JSON.stringify(res.refresh))
-    // localStorage.setItem('token',JSON.stringify(res.access))
-    // localStorage.setItem('refresh',JSON.stringify(res.refresh))
-    document.querySelector('body').style.overflow='auto'
-    setLogin(!islogin)
+    const data2 = {token:res.access}
+    console.log(data2);
+    try {
+        const {data:response} = await axios.post(vurl,data2)
+        console.log(response);
+        setCookie('token',JSON.stringify(res.access))
+        setCookie('refresh',JSON.stringify(res.refresh))
+        setLoading(false)
+        setLogin(!islogin)
+        
+        
+       
+    } catch (error) {
+        console.log(error);
+        setLoading(false)
+    }
     
+    
+  
+
   } catch (error) {
     console.log(error);
+    setLoading(false)
+    const error_message = error.response.data
+    let keys = []
+    for (let key in error_message){
+        if (error_message.hasOwnProperty(key)){
+            keys.push(key)
+        }
+        keys.map(e=>
+            Seterror_msg(error_message[e]))
+        
+    
+   }
   }
 }
 
@@ -72,7 +116,7 @@ const handlegoogle = (credentialResponse,navigate)=>{
 }
 
   return (
-    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress}}>
+    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress,error_msg,loading}}>
             {children}
     </LoginDataContext.Provider>
   )

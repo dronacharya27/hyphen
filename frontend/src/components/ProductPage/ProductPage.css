@@ -1,7 +1,7 @@
 
 .productpage{
-   /* background-color: var(--kritiblue); */
-   background-color: #ec797e;
+
+   background-color: gray;
    
     height: 100vh;
     width: 100%;
@@ -16,9 +16,10 @@
     flex: 1;
     position: relative;
 }
-.productleftinitial{
+/* .productleftinitial{
     background-image: url('/Products/product2.webp');
-}
+} */
+
 .productimage{
     height: 100%;
     width: 80%;

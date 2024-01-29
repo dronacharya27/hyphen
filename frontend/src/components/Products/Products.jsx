@@ -22,7 +22,7 @@ const Products = () => {
         {products.map((e,index)=>(
              <div className="productcard" key={index}>  
              <Link to={`/productpage/${e.id}/${e.product_name.trim().split(" ").join('-')}`}> 
-             <div className="cardimg"><img src={e.product_main_img} alt="" onClick={()=>setProgress(100)}/></div></Link> 
+             <div className="cardimg"><img src={e.product_main_img} alt="" onClick={()=>setProgress(70)}/></div></Link> 
              <div className='productcartdetail'><p>{e.product_name}</p> 
              <button className='btn cardbtn' onClick={()=>add_to_cart(e.id,e)}><i className="ri-shopping-cart-2-fill"></i></button>
              </div> 

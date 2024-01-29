@@ -5,9 +5,12 @@ import axios from 'axios'
 import { useParams } from "react-router-dom";
 import { useProductContext } from "../../Context/ProductContext";
 import Footer from "../Footer/Footer";
+import {ColorRing} from 'react-loader-spinner'
+import { useLoginDataContext } from "../../Context/LoginContext";
 
 const ProductPage = () => {
   const {products,isError,isLoading} = useProductContext()
+  const {progress, setProgress} = useLoginDataContext()
   const params = useParams()
   console.log(params);
   console.log(products)
@@ -20,13 +23,21 @@ const ProductPage = () => {
   const url = `http://127.0.0.1:8000/api/product/${params.id}`
 useEffect(()=>{
   if (products) {
-    products.find((e)=>e.id==params.id).product_img.slice(0,1).map((e,index) => (
+    products.find((e)=>e.id==params.id).product_img.slice(0,1).map((e,index) => {
       setImage(e.image)
-       
-     ))
+      setProgress(100)
+      if(productpage){
+        productpage.style.setProperty('--url',`url(${e.image})`)
+      }
+     
+    }
+     
+     )
   }
  
-},[products])
+},[products,productpage])
+
+
   
  
  
@@ -57,9 +68,17 @@ useEffect(()=>{
         <div className="productleft productleftinitial">
           <div className="productimage">
           {
-        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+        isLoading?<h1><ColorRing
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="color-ring-loading"
+        wrapperStyle={{}}
+        wrapperClass="color-ring-wrapper"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        /></h1>:isError?<h1>error</h1>:
         <>
-       
+     
          <img className="proimg" src={Image} alt="" />
          </>
        
@@ -67,7 +86,15 @@ useEffect(()=>{
             
           </div>
           {
-        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+        isLoading?<h1><ColorRing
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="color-ring-loading"
+        wrapperStyle={{}}
+        wrapperClass="color-ring-wrapper"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        /></h1>:isError?<h1>error</h1>:
           <div className="productimagelist">
           
         {products.find((e)=>e.id==params.id).product_img.map((e,index) => (
@@ -93,7 +120,15 @@ useEffect(()=>{
         </div>
         <div className="productright">
         {
-        isLoading?<h1>loading...</h1>:isError?<h1>error</h1>:
+        isLoading?<h1><ColorRing
+        visible={true}
+        height="80"
+        width="80"
+        ariaLabel="color-ring-loading"
+        wrapperStyle={{}}
+        wrapperClass="color-ring-wrapper"
+        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+        /></h1>:isError?<h1>error</h1>:
         <div className="productdetailpage">
             <div className="productname">
               

@@ -61,8 +61,8 @@ const Navbar = ({home,setLogin,islogin}) => {
         <Link to='/'>   <div className="navitem">About Us</div></Link>
         </div>
         <div className="productrightnav">
-       {cookie.token? <Link to='/checkout'><div className='prrightnavitem' onClick={()=>setProgress(100)}><FaShoppingCart />
-       <div className="prtotal">{state.total}</div></div></Link> : <div className='rightnavitem' onClick={handleloginclick} >LogIn</div>} 
+       {cookie.token?<><Link to='/checkout'><div className='prrightnavitem' onClick={()=>setProgress(100)}><FaShoppingCart />
+       <div className="prtotal">{state.total}</div></div></Link></>  : <div className='rightnavitem' onClick={handleloginclick} >LogIn</div>} 
  
          </div>
         </div>

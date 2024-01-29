@@ -8,28 +8,28 @@
 }
 .checkouttop{
     margin-top: 5%;
-    height: 80%;
-    width: 80%;
+    height: 77%;
+    width: 92%;
     background-color: var(--kritiyellow);
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1vmax;
+    padding: 2vmax;
     gap: 1vw;
 }
 .checkoutleft{
-    border-radius: 20px;
+    border-radius: 10px;
     flex: 1.8;
     background-color: var(--kritiyellow);
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 1vw;
+    /* flex-direction: column; */
+    gap: 2.5vw;
 }
 .checkoutright{
-    border-radius: 20px;
+    border-radius: 10px;
     flex: 1.3;
     background-color: var(--kritiyellow);
     height: 100%;
@@ -40,46 +40,63 @@
 }
 
 .lefttop{
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: white;
-    width: 100%;
-    height: 20%;
+    width: 30%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+   
+    
+    flex-direction: column;
+    /* background-color: blue; */
 }
 .leftbottom{
-    border-radius: 20px;
+    
+    border-radius: 5px;
     background-color: white;
-    width: 100%;
-    height: 80%;
+    width: 70%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    overflow: hidden;
+    
+   
 }
 
 .checkouttopitems{
-    font-family: 'Just Another Hand', cursive;
-    font-size: 2vmax;
+    /* background-color: pink; */
+    font-size: 1.5vmax;
+    font-weight: 500;
     width: 100%;
-    display: flex;
-   align-items: center;
-   justify-content: center;
+ 
+ 
+  display: flex;
+ flex-direction: row-reverse;  
+   
   
     
 }
-
-.rightbottom{
-    border-radius: 20px;
-    background-color: white;
-    width: 100%;
-    height: 20%;
-  
+.checkitemss{
+    margin-top: 8vmax;
+    display: flex;
+    flex-direction: column;
+    gap: 6.7vmax;
+    
+}
+.checkouticon{
+    display: flex;
+    margin-right: 2px;
+   align-items: center;
+   gap: 0.3vmax;
+   flex-direction: row-reverse;  
 }
 
+
 .righttop{
-    border-radius: 20px;
-    background-color: var(--kritiyellow);
+    border-radius: 10px;
+    background-color: white;
     width: 100%;
     height: 80%;
     overflow: hidden;
@@ -89,22 +106,32 @@
 }
 
 .rightcheckoutheading{
-    padding-left: 2%;
    
-    background-color: white;
-    height: 25%;
-    border-radius: 20px;
-    font-size: 1.5vmax;
+   /* color: rebeccapurple; */
+    /* background-color: red; */
+    height: fit-content;
+    border-radius: 10px;
+    font-size: 1.9vmax;
+    font-weight: 500;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    padding: 1vmax 2.2vmax;
+   
+}
+
+.rightcheckoutheading span{
+    color: #747474;
+    font-weight: 400;
+    font-size: 1.2vmax;
 }
 .checkoutitemlist{
      background-color: white;
     padding: 0 1vmax;
- 
-    height: 75%;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1vmax;
+    height: 90%;
+    border-radius: 10px;
     overflow-y: scroll;
 
 }
@@ -130,30 +157,43 @@
     background: rgb(74, 73, 73);
   }
 .checkoutitems{
-    margin: 1vw 0;
-    width: 100%;
-    height: 35%;
-    background-color: white;
+   
+    background-color: #f7f7f7;
+    height: 40%;
+    /* background-color: white; */
     display: flex;
+    gap: 0.5vmax;
+    padding: 1vmax 1vmax;
+  
+    border-radius: 10px;
+   
+    
 }
 .checkoutimage{
-    
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
-    flex: 1;
+    width: fit-content;
+   
+   
+    /* background-color: yellow; */
 }
 .checkoutimage img{
     
     height: 100%;
-    width: 100%;
-    object-fit:contain;
+    /* width: 100%; */
+    object-fit:cover;
+    border-radius: 10px;
+    
     
 }
 .checkoutdetails{
-    
+    /* background-color: red; */
     height: 100%;
     width: 100%;
-    flex: 1.5;
+    
     display: flex;
     flex-direction: column;
 
@@ -164,21 +204,26 @@
     text-align: center;
     height: 100%;
     width: 100%;
-    flex: 1;
+    font-size: 2vmax;
+    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: blue; */
 }
 .checkoutproductdetail{
-    font-size: 1vmax;
-    
-   height: 60%;
+    font-size: 1.3vmax;
+    font-weight: 600;
+    /* background-color: red; */
+   height: 40%;
     width: 100%;
+    text-transform: capitalize;
+    padding-left: 5px;
 }
 .adddelete{
    
    height: 40%;
-    
+    margin-top: 1.2vmax;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -192,6 +237,7 @@
     align-items: center;
     border-radius: 20px;
     width: 50%;
+    flex-direction: row-reverse;
 }
 .deleteproduct{
     text-align: center;
@@ -220,7 +266,13 @@
     font-family: 'inter';
     font-size: 1.3  vmax;
 }
-
+.itemprice{
+    font-size: 1.3vmax;
+    font-weight: 800;
+    color: #747474;
+    padding-left: 5px;
+   
+}
 .empty_cart{
     font-size: 2vmax;
     width: 100%;
@@ -229,36 +281,181 @@
     justify-content: center;
     align-items: center;
 }
+.rightbottom{
+    border-radius: 10px;
+    background-color: white;
+    padding: 1.3vmax;
+    
+    height: 20%;
+  display: flex;
+}
 
 .cart_total{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 1vmax;
-    height: 100%;
     width: 100%;
     font-size: 1.5vmax;
+    /* background-color: blue; */
+    flex-direction: column;
+}
+.totalitem{
+    /* background-color: yellow; */
+    font-weight: 500;
+    font-size: 1.2vmax;
+    color: #747474;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.totalamount{
+    margin-top: 1vmax;
+    font-size: 1.8vmax;
+    font-weight: 800;
+    color: black;
 }
 
 .phone{
-    display: flex;
-    flex-direction: column;
+   
     height: 50%;
     width: 50%;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+   
+    /* background-color: red; */
+    gap: 1vmax;
+    padding: 2vmax;
 }
-
+.phone span{
+    font-size: 1.5vmax;
+    font-weight: 400;
+}
+.phone input{
+    border: 1px solid black;
+    
+    height: 2.5vmax;
+    width: 20vmax;
+    border-radius: 2px;
+    
+    
+    font-size: 1.5vmax;
+    text-align: center;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.phone button{
+    border: none;
+    background-color: var(--kritiyellow);
+    height: 2.5vmax;
+    width: 10vmax;
+    font-size: 1.5vmax;
+    border-radius: 20px;
+}
+.inputbtnadd{
+    display: flex;
+    gap: 10px;
+}
 .address{
-
-    display: flex;
-    flex-direction: column;
     height: 50%;
     width: 50%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background-color: blue; */
+    
 }
 
-.addressafter{
+.order{
+   /* background-color: pink; */
+    height: 50%;
+    width: 50%;
     display: flex;
+    flex-direction: column;
+    color: #747474;
+    padding: 2vmax;
+   
+    
+}
+.orderconfirm{
+    font-size: 1.5vmax;
+    font-weight: 600;
+   
+}
+.orderplace{
+    
+    /* background-color: blue; */
+    height: 80%;
+    width: 100%;
+    
+}
+
+.paymentlogo{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+   
+  
+}
+.logospay{
+    width: 100%;
+    margin-top: 0.4vmax;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    /* background-color: purple; */
+    
+}
+.paylogo{
+    height: 3.5vmax;
+    width: 3.5vmax;
+    
+   /* background-color: hotpink; */
+   
+    
+}
+
+
+.paylogo img{
+    
+    height: 100%;
+    width: 100%;
+    /* aspect-ratio: 16/9; */
+    object-fit: contain;
+    
+   filter: contrast(25%);
+   filter: saturate(0);
+   
+
+}
+.support{
+    /* background-color: green; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1vmax;
+    color: #747474;
+
+
+}
+
+.loadbar{
+    transform: rotate(90deg);
+}
+
+.checkoutheading{
+    padding: 1vmax;
+    /* background-color: red; */
+    font-weight: 500;
+    font-size: 1.4vmax;
 }
