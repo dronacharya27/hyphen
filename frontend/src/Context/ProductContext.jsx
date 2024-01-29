@@ -11,7 +11,7 @@ const ProductProvider = ({children}) => {
     
     const {progress, setProgress} = useLoginDataContext()
     const getproductcache = async()=>{
-      const url = 'http://dron2708.pythonanywhere.com/api/product/'
+      const url = 'https://dron2708.pythonanywhere.com/api/product/'
       const {data:res} = await axios.get(url)
       console.log(res);
       return res

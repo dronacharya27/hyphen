@@ -12,7 +12,7 @@ const initialstate = {
     re_password:''
 }
 
-const URL = 'http://dron2708.pythonanywhere.com/api/auth/'
+const URL = 'https://dron2708.pythonanywhere.com/api/auth/'
 const LoginDataContextProvider = ({children}) => {
   const[error_msg,Seterror_msg]=useState([])
   const [loading,setLoading] = useState(false)
