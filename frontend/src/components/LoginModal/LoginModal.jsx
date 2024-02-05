@@ -34,8 +34,8 @@ const LoginModal = ({islogin,setLogin}) => {
             <div className="inputfields">
             <div className="field"> <input name='name' type="text" className='inpfield' placeholder='Name' onChange={handledata}/> </div>
                 <div className="field"> <input name='email' type="text" className='inpfield' placeholder='Gmail' onChange={handledata}/> </div>
-                <div className="field"><input name='password' type="text" className='inpfield' placeholder='Password' onChange={handledata}/></div>
-                <div className="field"><input name='re_password' type="text" className='inpfield' placeholder='Confirm Password' onChange={handledata}/></div>
+                <div className="field"><input name='password' type="password" className='inpfield' placeholder='Password' onChange={handledata}/></div>
+                <div className="field"><input name='re_password' type="password" className='inpfield' placeholder='Confirm Password' onChange={handledata}/></div>
                 <div className='errormsg'>
         {error_msg?<p>
           {error_msg}
@@ -69,7 +69,7 @@ const LoginModal = ({islogin,setLogin}) => {
         <div className="inputfields">
             
             <div className="field"> <input name='email' type="text" className='inpfield' placeholder='Gmail' onChange={handledata}/> </div>
-            <div className="field"><input  name='password' type="text" className='inpfield' placeholder='Password' onChange={handledata}/></div>
+            <div className="field"><input  name='password' type="password" className='inpfield' placeholder='Password' onChange={handledata}/></div>
             <div className='errormsg'>
         {error_msg}
                     </div>
