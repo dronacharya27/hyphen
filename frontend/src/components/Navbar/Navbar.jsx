@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom'
 import LoadingBar from 'react-top-loading-bar';
 
 import { useCookies } from 'react-cookie';
-import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowBack, IoMdPeople } from "react-icons/io";
 import { FaShoppingCart } from "react-icons/fa";
+import { IoIosPeople } from 'react-icons/io';
 
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -62,7 +63,7 @@ const Navbar = ({home,setLogin,islogin}) => {
         </div>
         <div className="productrightnav">
        {cookie.token?<><Link to='/checkout'><div className='prrightnavitem' onClick={()=>setProgress(100)}><FaShoppingCart />
-       <div className="prtotal">{state.total}</div></div></Link></>  : <div className='rightnavitem' onClick={handleloginclick} >LogIn</div>} 
+       <div className="prtotal">{state.total}</div></div></Link></>  : <div className='rightnavitem' onClick={handleloginclick} ><IoMdPeople/></div>} 
  
          </div>
         </div>
