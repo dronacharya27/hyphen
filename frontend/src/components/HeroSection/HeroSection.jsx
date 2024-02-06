@@ -1,7 +1,10 @@
 import React from 'react'
 import './HeroSection.css'
-import Navbar from '../Navbar/Navbar'
-import { Link } from 'react-router-dom'
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
+import { Slide,Zoom } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
+
 const HeroSection = () => {
   const handleClickScroll = () => {
     
@@ -14,11 +17,26 @@ const HeroSection = () => {
     }
   };
   return (
+    
     <div id='home'>
+                <div className="slideshow">
+                <Zoom arrows={false} scale={1.2} duration={3000}>
+                <div className="background">
+                    <img src="/HeroImage/kritiback.webp"/>
+                </div>
+            
+                <div className="background">
+                    <img src="/Footer/footer.png"/>
+                </div>
+            
+                <div className="background">
+                    <img src="/HeroImage/kritiback.webp"/>
+                </div>
+            
+        </Zoom>
+                </div>
+                
       
-      <div className="background">
-      <img src="/HeroImage/kritiback.webp" alt="" />
-      </div>
       <div className="mainhead">
         <div className="heading">LET’S HYPHEN YOUR<br /> SKINCARE!</div>
         <div className="subhead">We believe in curating result driven skincare solutions, by blending the best & multiple, natural and active ingredients in ONE bottle. We are dedicated to Clean, 100% Vegan, Peta Certified products & achieved Zero Plastic Footprint for all our products.</div>
