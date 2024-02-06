@@ -1,5 +1,5 @@
 .productsmain{
-    background-color:#86F8EA;
+    background-color: #ffe4fa;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -44,7 +44,7 @@
 }
 
 .productheading{
-    
+    font-weight: 600;
     margin-top: 20vh;
     border-top-right-radius: 20px;
     display: flex;

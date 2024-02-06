@@ -1,7 +1,8 @@
 .footermain{
     height: 100vh;
     width: 100%;
-    background-color: #86F8EA;
+    background-color:  #ffe4fa;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
