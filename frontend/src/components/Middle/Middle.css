@@ -4,29 +4,33 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    background-color: #86F8EA;
-    height: 70vh;
+    /* background-color: #dbdaea; */
+    background-color: #ffe4fa;
+    height: 100vh;
+    
     /* color: #FFF175; */
 }
 .middleheading{
     
     font-family: 'Just Another Hand', cursive;
-   
+   color: black;
     text-align: center;
-    font-size: 7vmax;
+    font-size: 5vmax;
+  
 }
 .middlesubheading{
     margin-top: 10px;
     color: rgb(36, 33, 33);
-    text-align: center;
-    
-    font-family: 'intern';
-    font-size: 2vmax;
+    text-align: left;
+    letter-spacing: -0.5px;
+    font-family: 'inter',sans-serif;
+    font-size: 1.5vmax;
+    margin-top: 3.5rem;
 }
 
 .middleheadingclass{
     border-radius: 20px;
-   padding: 30px;
+   padding: 4rem;
     background-color: #FFF175;
     width: 60vmax;
 }

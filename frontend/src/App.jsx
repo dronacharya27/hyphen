@@ -8,28 +8,12 @@ import Navbar from './components/Navbar/Navbar'
 import Loader from './components/Loader/Loader'
 import './App.css'
 const App = () => {
-  const [fan, setFan] = useState(true)
+  
   return (
 
     <>
     <div>
-    {fan?(
-      <div className="fanmodal">
-        <div className="fanmodalcontent">
-          <div className="fanheading">
-            ***This is not Official website for hyphen products. It is a fanmade website.
-            If you want to purchase products you can visit the Official website here.
-            <a href="https://letshyphen.com/">www.letshyphen.com</a>
-            
-          </div>
-          <div className="fanbutton">
-                If you want to see my website, lets dive into it.
-                <button className="fanbtn" onClick={()=>setFan(false)}>Let's Hyphen</button>
-            </div>
-        </div>
-      </div>
-
-    ): <></>}
+    
       <Router>
       <Routes>
         

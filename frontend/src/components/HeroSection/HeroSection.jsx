@@ -20,18 +20,35 @@ const HeroSection = () => {
     
     <div id='home'>
                 <div className="slideshow">
-                <Zoom arrows={false} scale={1.2} duration={3000}>
+                <Zoom arrows={false} scale={1.1} duration={3000}>
                 <div className="background">
-                    <img src="/HeroImage/kritiback.webp"/>
+                    <img src="/HeroImage/HeroKriti.png"/>
                 </div>
             
                 <div className="background">
-                    <img src="/Footer/footer.png"/>
+                    <img src="/HeroImage/kritihero.avif"/>
+                </div>
+                <div className="background">
+                    <img src="/HeroImage/kriti01.jpeg"/>
                 </div>
             
                 <div className="background">
-                    <img src="/HeroImage/kritiback.webp"/>
+                    <img src="/HeroImage/kritihero4.webp"/>
                 </div>
+                <div className="background">
+                    <img src="/HeroImage/kritihero3.webp"/>
+                </div>
+                <div className="background">
+                    <img src="/HeroImage/kritihero8.webp"/>
+                </div>
+                <div className="background">
+                    <img src="/HeroImage/kritihero9.jpeg"/>
+                </div>
+                
+                <div className="background">
+                    <img src="/HeroImage/kritihero10.webp"/>
+                </div>
+                
             
         </Zoom>
                 </div>

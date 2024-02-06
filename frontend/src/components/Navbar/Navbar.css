@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     z-index: 500;    
-   
+    
       
 }
 
@@ -22,6 +22,8 @@
     font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
+    
+    
 }
 .productnav{
    
@@ -33,12 +35,12 @@
     justify-content: space-between;
     
     width: 100%;
-    height: 4rem;
+    height: 7rem;
     margin-top: 2rem;  
     text-transform: uppercase;
     font-size: 1rem;
-    z-index: 500      
-    
+    z-index: 500;   
+   
 }
 .productcenternav{
     display: flex;
@@ -71,6 +73,7 @@
   
    height: 100%;
    width: 100%;
+   
 }
 
 .prtotal{
@@ -103,6 +106,7 @@
     background-color:rgba(228, 226, 226, 0.495);
     margin-right: 2%;
    backdrop-filter: blur(2px);
+   filter: drop-shadow(#0000002f 0px 3px 2px)
 }
 .productrightnav:hover{
     background-color: var(--kritiyellow);
@@ -118,6 +122,7 @@
     flex: 1;
     width: 100%;
     background-color: #FFF175;
+    filter: drop-shadow(#0000002f 0px 3px 2px)
     
 }
 .leftnav a img{
@@ -139,9 +144,15 @@
     flex: 1;
     background-color:#FFF175;
     margin-right: 2%;
+    filter: drop-shadow(#0000002f 0px 3px 2px)
+}
+.rightnavitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
     
 }
-
 .centernav{
    
     cursor: pointer;
@@ -153,6 +164,7 @@
     height: 100%;
     /* width: 100%; */
     background-color: #FFF175;
+    filter: drop-shadow(#0000002f 0px 3px 2px)
     
 }
 
