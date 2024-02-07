@@ -104,6 +104,12 @@ const handlelogin =  async(setLogin,islogin) =>{
   }
 }
 
+// Logout
+const handlelogout =()=>{
+    removeCookie("token")
+    console.log(cookie)
+}
+
 // GOOGLE LOGIN
 
 const handlegoogle = (credentialResponse,navigate)=>{
@@ -116,7 +122,7 @@ const handlegoogle = (credentialResponse,navigate)=>{
 }
 
   return (
-    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress,error_msg,loading}}>
+    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress,error_msg,loading,handlelogout}}>
             {children}
     </LoginDataContext.Provider>
   )
