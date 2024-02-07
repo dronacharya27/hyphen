@@ -5,13 +5,14 @@ import { useCartContext } from "../../Context/CartContext";
 import LoadingBar from "react-top-loading-bar";
 import { IoIosArrowBack } from "react-icons/io";
 import { useLoginDataContext } from "../../Context/LoginContext";
+import { useOrderContext } from "../../Context/OrderContext";
 const Checkout = () => {
   const { add_to_cart, remove_from_cart,state } = useCartContext();
   const {handleuser} =useLoginDataContext();
   const [progressch, setProgressch] = useState(33);
   const [isMobile, setIsMobile] = useState(true);
   const [isAdd, setAdd] = useState(false);
-
+  const {handleorderdata,order_state} = useOrderContext()
   const handlemobile=()=>{
     const c1 = document.querySelector('.c1').style.color='gray'
     const c2 = document.querySelector('.c2').style.color='black'
@@ -46,8 +47,9 @@ const Checkout = () => {
   }
 
   useEffect(()=>{
-    handleuser()
-  },[])
+    const user = handleuser()
+  
+  },[order_state])
   return (
     <div>
       <Navbar home={true} />
@@ -98,16 +100,20 @@ const Checkout = () => {
                   <div className="inputbtnadd nameinput">
                     <input
                       type="text"
-                      name=""
+                      name="name"
                       id=""
+                      value={order_state.name}
+                      onChange={(e)=>handleorderdata(e)}
                       placeholder="First Name"
                       pattern="[0-9]{10}"
                       required
                     />
                     <input
                       type="text"
-                      name=""
+                      name="last_name"
                       id=""
+                      value={order_state.last_name}
+                      onChange={(e)=>handleorderdata(e)}
                       placeholder="Last Name"
                       pattern="[0-9]{10}"
                       required
@@ -117,7 +123,9 @@ const Checkout = () => {
                   <div className="inputbtnadd">
                     <input
                       type="number"
-                      name=""
+                      name="mobile_number"
+                      value={order_state.mobile_number}
+                      onChange={(e)=>handleorderdata(e)}
                       id=""
                       placeholder="Mobile Number"
                       pattern="[0-9]{10}"
@@ -127,7 +135,9 @@ const Checkout = () => {
                   <div className="inputbtnadd">
                     <input
                       type="email"
-                      name=""
+                      name="email"
+                      value={order_state.email}
+                      onChange={(e)=>handleorderdata(e)}
                       id=""
                       placeholder="Email"
                       pattern="[0-9]{10}"
@@ -161,7 +171,9 @@ const Checkout = () => {
                
                   <input
                     type="text"
-                    name=""
+                    name="address"
+                    value={order_state.address}
+                    onChange={(e)=>handleorderdata(e)}
                     id=""
                     placeholder="Address"
                     pattern="[0-9]{10}"
@@ -171,7 +183,9 @@ const Checkout = () => {
                 <div className="inputbtnadd inputadd">
                   <input
                     type="text"
-                    name=""
+                    name="apt"
+                    value={order_state.apt}
+                    onChange={(e)=>handleorderdata(e)}
                     id=""
                     placeholder="Apartment, suite, etc."
                     pattern="[0-9]{10}"
@@ -181,7 +195,9 @@ const Checkout = () => {
                 <div className="inputbtnadd nameinput">
                   <input
                     type="text"
-                    name=""
+                    name="city"
+                    value={order_state.city}
+                    onChange={(e)=>handleorderdata(e)}
                     id=""
                     placeholder="City"
                     pattern="[0-9]{10}"
@@ -190,7 +206,9 @@ const Checkout = () => {
     
                   <input
                     type="number"
-                    name=""
+                    name="postcode"
+                    value={order_state.postcode}
+                    onChange={(e)=>handleorderdata(e)}
                     id=""
                     placeholder="Postcode"
                     pattern="[0-9]{10}"
@@ -220,12 +238,12 @@ const Checkout = () => {
           <div className="placeorderdetail">
             <div className="placeorderheading">Please Verify Details</div>
             <div className="orderdetailscheck">
-            <div className="placeordername">Dron Kishor</div>
-            <div className="placeorderemail">dronkishor2002@gmail.com</div>
-            <div className="placeordernumber">9825484380</div>
-            <div className="placeordeaddress1">Plot 3B, Suvidha APT street</div>
-            <div className="placeordeaddress2">Behind Paradise Cinema</div>
-            <div className="placeordeaddress3">Porbandar, 360575</div>
+            <div className="placeordername">{order_state.name} {order_state.last_name}</div>
+            <div className="placeorderemail">{order_state.email}</div>
+            <div className="placeordernumber">{order_state.mobile_number}</div>
+            <div className="placeordeaddress1">{order_state.address}</div>
+            <div className="placeordeaddress2">{order_state.apt}</div>
+            <div className="placeordeaddress3">{order_state.city}, {order_state.postcode}</div>
             </div>
             
            
