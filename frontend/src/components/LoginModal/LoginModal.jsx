@@ -93,7 +93,8 @@ const LoginModal = ({islogin,setLogin}) => {
             <div className='socialbtn'>  
             <GoogleLogin
   onSuccess={credentialResponse => {
-    handlegoogle(credentialResponse,navigate())
+    const credential = credentialResponse.credential
+    handlegoogle(credential,navigate())
     setLogin(false)
   }}
   onError={() => {

@@ -19,11 +19,31 @@ const getCartData = useCallback( ()=>{
         return newCart.cart;
     }
 },[])
+const getTotalData = useCallback( ()=>{
+    // let newCart = cookie.cart
+    let newCart = JSON.parse(localStorage.getItem('cart')) 
+   
+    if(newCart == 0 || newCart==null || newCart == undefined){
+        return 0;
+    }else{
+        return newCart.total;
+    }
+},[])
+const getAmountData = useCallback( ()=>{
+    // let newCart = cookie.cart
+    let newCart = JSON.parse(localStorage.getItem('cart')) 
+   
+    if(newCart == 0 || newCart==null || newCart == undefined){
+        return 0;
+    }else{
+        return newCart.total_price;
+    }
+},[])
 
 const initialstate = {
     cart:getCartData(),
-    total:0,
-    total_price:0
+    total:getTotalData(),
+    total_price:getAmountData()
 }
 
 const[state,dispatch] = useReducer(CartReducer,initialstate)
@@ -32,6 +52,7 @@ const[state,dispatch] = useReducer(CartReducer,initialstate)
 useEffect(()=>{
     // setCookie('cart', JSON.stringify(state.cart))
     localStorage.setItem('cart',JSON.stringify(state))
+    
 },[state.cart])
 
 useEffect(()=>{
