@@ -174,7 +174,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
        'rest_framework_simplejwt.authentication.JWTAuthentication',
         
-    ),
+    )
 }
 # SIMPLE JWT CONFIG
 SIMPLE_JWT = {
