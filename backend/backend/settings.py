@@ -115,15 +115,15 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-#Cloudinary
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME':'dsvsptlwm',
-    'API_KEY':'244164334563411',
-    'API_SECRET':'haEOHcAKQ-4AtEe1IbHo5UAUZ1Q'
+# #Cloudinary
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME':'dsvsptlwm',
+#     'API_KEY':'244164334563411',
+#     'API_SECRET':'haEOHcAKQ-4AtEe1IbHo5UAUZ1Q'
 
-}
+# }
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
