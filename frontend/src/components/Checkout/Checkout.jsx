@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Checkout.css";
 import Navbar from "../Navbar/Navbar";
 import { useCartContext } from "../../Context/CartContext";
 import LoadingBar from "react-top-loading-bar";
 import { IoIosArrowBack } from "react-icons/io";
+import { useLoginDataContext } from "../../Context/LoginContext";
 const Checkout = () => {
   const { add_to_cart, remove_from_cart,state } = useCartContext();
+  const {handleuser} =useLoginDataContext();
   const [progressch, setProgressch] = useState(33);
   const [isMobile, setIsMobile] = useState(true);
   const [isAdd, setAdd] = useState(false);
@@ -42,6 +44,10 @@ const Checkout = () => {
     setAdd(true);
     setIsMobile(false)
   }
+
+  useEffect(()=>{
+    handleuser()
+  },[])
   return (
     <div>
       <Navbar home={true} />

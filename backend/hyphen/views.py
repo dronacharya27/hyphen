@@ -6,7 +6,7 @@ from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
-
+import json
 # Create your views here.
 
 class ProductViewSet(ModelViewSet):
@@ -37,7 +37,7 @@ class UserViewSet(ModelViewSet):
                     new_user.is_active=True
                     new_user.save()
                     refresh = RefreshToken.for_user(new_user)
-                    access = str(refresh.access_token)
+                    access = json.dumps(refresh.access_token)
                     return Response({"data":str(new_user),"access":access,"refresh":str(refresh)},status=status.HTTP_200_OK)
                 return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
     

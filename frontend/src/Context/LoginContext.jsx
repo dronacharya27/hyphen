@@ -13,7 +13,7 @@ const initialstate = {
     re_password:''
 }
 
-const URL = 'https://dron2708.pythonanywhere.com/api/auth/'
+const URL = 'http://127.0.0.1:8000/api/auth/'
 const LoginDataContextProvider = ({children}) => {
   const[error_msg,Seterror_msg]=useState([])
   const [loading,setLoading] = useState(false)
@@ -120,7 +120,7 @@ const handlegoogle = async (credential)=>{
     const send_data = {
         email:email,name:name,password:aud}
     console.log(email,name,aud)
-    const url = "https://dron2720.pythonanywhere.com/api/users/google_save/"
+    const url = "http://127.0.0.1:8000/api/users/google_save/"
     try {
         const {data:res} = await axios.post(url,send_data)
         console.log(res)
@@ -135,9 +135,36 @@ const handlegoogle = async (credential)=>{
   // window.location = gurl
 
 }
+// User Details
+
+const handleuser=async()=>{
+const url = URL+'users/me/'
+const vurl = URL+'jwt/verify/'
+const rurl = URL+'jwt/refresh/'
+const access = cookie.token
+const data2 = {token:access}
+const refresh = cookie.refresh
+const refresh_toke = {refresh:refresh}
+
+try {
+  const {data:res} = await axios.post(vurl,data2)
+  console.log(res)
+} catch (error) {
+  console.log(error)
+  try {
+    const {data:res2} = await axios.post(rurl,refresh_toke)
+    console.log(res2)
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
+
+}
 
   return (
-    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress,error_msg,loading,handlelogout}}>
+    <LoginDataContext.Provider value={{state,handledata,handlesignup,handlelogin,handlegoogle,progress,setProgress,error_msg,loading,handlelogout,handleuser}}>
             {children}
     </LoginDataContext.Provider>
   )
