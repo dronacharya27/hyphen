@@ -5,7 +5,7 @@ import { useCartContext } from "../../Context/CartContext";
 import LoadingBar from "react-top-loading-bar";
 import { IoIosArrowBack } from "react-icons/io";
 const Checkout = () => {
-  const { add_to_cart, remove_from_cart } = useCartContext();
+  const { add_to_cart, remove_from_cart,state } = useCartContext();
   const [progressch, setProgressch] = useState(33);
   const [isMobile, setIsMobile] = useState(true);
   const [isAdd, setAdd] = useState(false);
@@ -369,7 +369,7 @@ const Checkout = () => {
                   <div className="total">Shipping:</div>{" "}
                   <div className="itemtotal">
                     ₹
-                    {JSON.parse(localStorage.getItem("cart")).total_price / 100}
+                    {state.total_price / 100}
                   </div>{" "}
                 </div>
                 <div className="totalitem">
@@ -377,8 +377,8 @@ const Checkout = () => {
                   <div className="total">Taxes:</div>{" "}
                   <div className="itemtotal">
                     ₹
-                    {(JSON.parse(localStorage.getItem("cart")).total_price *
-                      18) /
+                    {state.total_price *
+                      18 /
                       100}
                   </div>{" "}
                 </div>
@@ -386,7 +386,8 @@ const Checkout = () => {
                   {" "}
                   <div className="total">Total Amount:</div>{" "}
                   <div className="itemtotal">
-                    ₹{JSON.parse(localStorage.getItem("cart")).total_price}/-
+                    {console.log(state.total_price)}
+                    ₹{state.total_price}/-
                   </div>{" "}
                 </div>
               </div>

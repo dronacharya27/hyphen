@@ -2,15 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 import "./ProductPage.css";
 import Navbar from "../Navbar/Navbar";
 import axios from 'axios'
-import { useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { useProductContext } from "../../Context/ProductContext";
 import Footer from "../Footer/Footer";
 import {ColorRing} from 'react-loader-spinner'
 import { useLoginDataContext } from "../../Context/LoginContext";
+import { useCartContext } from "../../Context/CartContext";
 
 const ProductPage = () => {
   const {products,isError,isLoading} = useProductContext()
   const {progress, setProgress} = useLoginDataContext()
+  const {add_to_cart} = useCartContext()
   const params = useParams()
   console.log(params);
   console.log(products)
@@ -38,8 +40,8 @@ useEffect(()=>{
 },[products,productpage])
 
 
-  
- 
+    const product  = products.find((e)=>e.id==params.id)
+    const navigate =useNavigate()
  
 
     const handleImage = (e) => {
@@ -192,10 +194,10 @@ useEffect(()=>{
             </div>
             <div className="productactions">
             <div className="actions">
-                <button className="btn">Buy Now</button>
+                <button className="btn" onClick={()=>{add_to_cart(params.id,product), navigate('/checkout')}}>Buy Now</button>
               </div>
               <div className="actions">
-                <button className="btn cartbtn">Add to cart</button>
+                <button className="btn cartbtn" onClick={()=>add_to_cart(params.id,product)}>Add to cart</button>
               </div>
               
             </div>

@@ -2,6 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react'
 import LoginReducer from '../Reducer/LoginReducer'
 import axios from 'axios'
 import { Navigate, useNavigate } from 'react-router-dom'
+import {decodeJwt} from 'jose'
 import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 const LoginDataContext = createContext()
@@ -112,10 +113,24 @@ const handlelogout =()=>{
 
 // GOOGLE LOGIN
 
-const handlegoogle = (credentialResponse,navigate)=>{
-  setCookie('token',JSON.stringify(credentialResponse))
-  console.log(cookie.token)
-  
+const handlegoogle = async (credential)=>{
+  const data = decodeJwt(credential)
+    console.log(data)
+    const {email,name,aud} = data
+    const send_data = {
+        email:email,name:name,password:aud}
+    console.log(email,name,aud)
+    const url = "https://dron2720.pythonanywhere.com/api/users/google_save/"
+    try {
+        const {data:res} = await axios.post(url,send_data)
+        console.log(res)
+        setCookie('token',JSON.stringify(res.access))
+        setCookie('refresh',JSON.stringify(res.refresh))
+       
+    } catch (error) {
+        console.log(error)
+    }
+
   // const gurl = 'https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&client_id=436262933103-a2eah2g9rom3qi893nugknfcs4mlukrj.apps.googleusercontent.com&scope=profile%20email&response_type=code&redirect_uri=http://localhost:5173/loading/'
   // window.location = gurl
 

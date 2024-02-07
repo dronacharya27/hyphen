@@ -5,10 +5,11 @@ from . import views
 router = DefaultRouter() 
 router.register('product',views.ProductViewSet,basename='Product')
 
-
+router.register('user',viewset=views.UserViewSet,basename='user')
 
 urlpatterns = [
     path('auth/',include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
-    path('',include(router.urls))   
+    path('',include(router.urls)),  
+    path('users/google_save/', views.UserViewSet.as_view({'post': 'google_save_data'}), name='user-google-save'),
 ]
