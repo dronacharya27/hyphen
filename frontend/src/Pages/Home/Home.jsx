@@ -22,7 +22,8 @@ const Home = () => {
       <div className="fanmodal">
         <div className="fanmodalcontent">
           <div className="fanheading">
-            ***This is not Official website for hyphen products. It is a fanmade website.
+            <h2>Disclaimer</h2>
+            This is not Official website for hyphen products. It is a fanmade website.
             If you want to purchase products you can visit the Official website here.
             <a href="https://letshyphen.com/">www.letshyphen.com</a>
             

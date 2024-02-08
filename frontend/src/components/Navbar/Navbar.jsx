@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 import { useCookies } from "react-cookie";
-import { IoIosArrowBack, IoMdLogOut, IoMdPeople, IoMdPerson } from "react-icons/io";
-import { FaShoppingCart } from "react-icons/fa";
+import { IoIosArrowBack, IoIosCart, IoIosHome, IoIosInformationCircle, IoMdCart, IoMdHome, IoMdInformation, IoMdLogOut, IoMdPeople, IoMdPerson } from "react-icons/io";
+import { FaHome, FaInfoCircle, FaProductHunt, FaShopify, FaShoppingCart, FaWarehouse } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
-
+import { LuPackageSearch } from "react-icons/lu";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { useCartContext } from "../../Context/CartContext";
@@ -37,16 +37,63 @@ const Navbar = ({ home, setLogin, islogin }) => {
       setProgress(100);
     }
   };
-
+  let width = window.innerWidth
   return (
-    <div>
+    <>
       <LoadingBar
         color="#f11946"
         height={3}
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      {home ? (
+      
+      {width<768?<>
+      {home?<div className="mobilediv">
+          <div className="mobiledivcontent">
+          <div className="mobilenavitems">
+          <Link to="/">
+             <IoIosInformationCircle/>
+             </Link>
+            </div>
+            <div className="mobilenavitems" onClick={handleClickScroll}>
+            <Link to="/">
+              <LuPackageSearch/>
+              </Link>
+            </div>
+           
+            <div className="mobilenavitems" onClick={handleClickScrollhome}>
+            <Link to="/">
+            <IoIosHome/>
+            </Link>
+            </div>
+           
+            <div className="mobilenavitems">
+            <Link to="/checkout">
+              <IoIosCart/>
+              </Link>
+            </div>
+            <div className="mobilenavitems" onClick={handleloginclick}>
+            <IoMdPerson/>
+            </div>
+          </div>
+
+        </div>:<>
+        <div className="mobilediv productmobilenav">
+        <div className="productmobile">
+        <div className="mobilenavitems">
+            <Link to="/checkout">
+              <IoIosCart/>
+              </Link>
+            </div>
+        </div>
+        </div>
+        </>}
+        
+      </>
+      
+
+      :
+      home ? (
         <div className="mainnav">
           <div className="navcontent">
             <div className="leftnav">
@@ -145,7 +192,11 @@ const Navbar = ({ home, setLogin, islogin }) => {
           </div>
         </div>
       )}
-    </div>
+      
+        
+      
+      
+    </>
   );
 };
 

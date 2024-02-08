@@ -179,3 +179,58 @@
 
 
 
+.mobilediv{
+    height: 20rem;
+    width: 100%;
+   
+    z-index: 500;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(#0000002f 0px 3px 2px);
+}
+.mobilediv a{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    
+}
+
+.mobiledivcontent{
+    padding: 0 2rem;
+    width: 80%;
+    height: 12rem;
+    background-color: #FFF175;
+    border-radius: 20px;
+    display: flex;
+    gap: 3rem;
+}
+.mobilenavitems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6rem;
+    width: 20%;
+    height: 100%;
+    
+}
+
+.productmobile{
+    width: 12rem;
+    height: 12rem;
+    border-radius: none;
+    background-color:#FFF175;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 3rem;
+
+}
+.productmobilenav{
+   width: 100%;
+  
+    justify-content: flex-end;
+    
+}

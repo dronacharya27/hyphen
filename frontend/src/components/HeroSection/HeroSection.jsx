@@ -16,11 +16,27 @@ const HeroSection = () => {
       
     }
   };
+  const responsiveSettings = [
+    {
+        breakpoint: 800,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    },
+    {
+        breakpoint: 200,
+        settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    }
+];
   return (
     
     <div id='home'>
                 <div className="slideshow">
-                <Zoom arrows={false} scale={1.1} duration={3000}>
+                <Zoom arrows={false} duration={3000} responsive={responsiveSettings}>
                 <div className="background">
                     <img src="/HeroImage/HeroKriti.png"/>
                 </div>

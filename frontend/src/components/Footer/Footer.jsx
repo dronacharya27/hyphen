@@ -20,7 +20,7 @@ const Footer = () => {
           
             </div>
             <div className='footerpart'>
-                <div className='part1'> <img src="/Footer/hyphen.png" alt="" /></div>
+                <div className='part1'> <img className='logofooter' src="/Footer/hyphen.png" alt="" /></div>
                 <div className='part2'>
                     <div className="parthead">Subscribe To our Newsletter</div>
                     <div className="partsubhead">All the latest product drops, exclusive offers,in-store event info–straight to your inbox. </div>
