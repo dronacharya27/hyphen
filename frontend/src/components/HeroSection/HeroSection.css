@@ -75,7 +75,7 @@
 }
 
 
-@media (max-width:425px) {
+@media screen and (min-width:320px)and (max-width:768px) {
     .mainhead{
         align-items: center;
         justify-content: center;
