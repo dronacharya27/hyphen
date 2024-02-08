@@ -36,6 +36,9 @@ const Checkout = () => {
     setAdd(false);
     setIsMobile(true)
   }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const handleback2=()=>{
     const c1 = document.querySelector('.c1').style.color='gray'
     const c2 = document.querySelector('.c2').style.color='black'

@@ -4,7 +4,7 @@ const Middle = () => {
   return (
     <div>
       <div className='middle'>
-        <div className='middletop'></div>
+        
         
         <div className='middleheadingclass'>
         <div className="middleheading">
@@ -21,7 +21,7 @@ We believe in curating result driven skincare solutions, by blending the best & 
         
         </div>
         
-        <div className='middletop'></div>
+
       </div>
     </div>
   )
