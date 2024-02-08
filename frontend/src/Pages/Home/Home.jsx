@@ -13,6 +13,29 @@ const Home = () => {
   const [fan, setFan] = useState(true)
   
   const[islogin,setLogin]=useState(false)
+  useEffect(() => {
+    // Check if the disclaimer has been shown before
+    const disclaimerShown = localStorage.getItem('fan');
+
+    if (disclaimerShown) {
+      // If the disclaimer has been shown, hide it
+      setFan(false);
+    } else {
+      // If the disclaimer has not been shown, mark it as shown
+      localStorage.setItem('fan', 'true');
+    }
+  }, []);
+  const handleRefresh = () => {
+    // Reset the disclaimerShown flag upon full refresh
+    localStorage.removeItem('fan');
+  };
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', handleRefresh);
+    return () => {
+      window.removeEventListener('beforeunload', handleRefresh);
+    };
+  }, []);
 
   return (
     <div>
