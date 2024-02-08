@@ -18,7 +18,9 @@ const ProductPage = () => {
   console.log(products)
   
   const [Image, setImage] = useState('');
-  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const productpage = document.querySelector('.productpage')
   
 
