@@ -35,9 +35,21 @@
     width: 60vmax;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (min-width:320px)and (max-width:768px){
     .middleheadingclass{
-       width: 60vmin;
+       width: 80%;
+       height: 60%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .middleheading{
+        font-size: 8vmax;
+    }
+    .middlesubheading{
+        font-size: 2vmax;
+        text-align: center;
     }
     
 }

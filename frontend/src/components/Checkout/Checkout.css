@@ -569,3 +569,157 @@ backdrop-filter: blur(3px);
     font-size: 1.4rem;
   
 }
+
+@media screen and (min-width:320px)and (max-width:768px){
+    .checkoutmain{
+        height: 180vh;
+    }
+    .checkouttop{
+        flex-direction: column-reverse;
+        height: 90%;
+        gap: 7rem;
+        margin-top: 20%;
+    }
+    .checkoutleft{
+        height: 50%;
+        flex: none;
+    }
+    .checkoutright{
+        height: 50%;
+        flex: none;
+    }
+    .checkouttopitems{
+        gap: 0;
+        
+        width: fit-content;
+    }
+    .checkouticon{
+        font-size: 2vmax;
+    }
+    .leftbottom{
+        height: 90%;
+    }
+    .orderplace input{
+        width: 70%;
+        height: 100%;
+        font-size: 2.5vmax;
+        padding: 0 2rem;
+    }
+    .nameinput{
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+        height: 24% !important;
+        justify-content: center !important;
+        align-items: center !important;
+        /* height: 28%; */
+    }
+    .nameinput input{
+        height: 15rem;
+    }
+    .backplacebtn{
+        height:10%;
+        top:5%;
+        right: 32%
+    }
+    .backplacebtn button{
+        height: 100%;
+        width: 10rem;
+        font-size: 2vmax;
+    }
+    .orderplacebtn button{
+        font-size: 2.5vmax;
+        height: 100%;
+        width: 73%;
+    }
+    .inputbtnadd{
+        
+        display: flex;
+        align-items: flex-start;
+        height: 10%;
+        
+    }
+    .checklayer{
+        gap: 5rem;
+    }
+    .support{
+        font-size: 2vmax;
+    }
+    .paylogo{
+        height: 8rem;
+        width: 8rem;
+    }
+    .rightcheckoutheading{
+        font-size: 2.5vmax;
+    }
+    .rightcheckoutheading span{
+        font-size: 2vmax;
+    }
+    .checkoutproductdetail{
+        font-size: 2vmax;
+    }
+    .itemprice{
+        font-size: 2vmax;
+    }
+    .adddelete{
+       
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    .deleteproduct{
+        width: 30%;
+        height: 70%;
+        
+    }
+    .quantity{
+        height: 70%;
+        width: 60%;
+       
+        font-size: 2vmax;
+    }
+    .quantity span{
+        height: fit-content;
+        width: fit-content;
+
+    }
+    .checkoutbtn{
+        height: fit-content;
+        width: fit-content;
+        font-size: 3vmax;
+    }
+    .cart_total{
+        font-size: 2vmax;
+    }
+    .totalitem{
+        font-size: 2vmax;
+    }
+    .totalamount{
+        font-size: 2.5vmax;
+    }
+
+    .placeorderdetail{
+        width: 50rem;
+        height: 50%;
+    }
+    .placeorderheading{
+        font-size: 2.5vmax;
+    }
+    .placeordername{
+        font-size: 2vmax;
+    }
+    .placeorderemail{
+        font-size: 2vmax;
+    }
+    .placeordernumber{
+        font-size: 2vmax;
+    }
+    .placeordeaddress1{
+        font-size: 2vmax;
+    }
+    .placeordeaddress2{
+        font-size: 2vmax;
+    }
+    .placeordeaddress3{
+        font-size: 2vmax;
+    }
+}

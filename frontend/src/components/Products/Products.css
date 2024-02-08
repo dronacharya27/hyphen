@@ -23,8 +23,8 @@
 
 .cardimg{
     background-color:white;
-    width: 18vmax;
-    height:23vmax;
+    width: 25rem;
+    height:33rem;
     transition: all 0.5s;
     
 }
@@ -50,19 +50,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 5.5vmax;
-    width: 15vmax;
+    height: 5.5rem;
+    width: 15rem;
     background-color: #FFF175;
     
-    font-size: 2vmax;
+    font-size: 2rem;
     padding-top: 10px;
 }
 
 .productcartdetail{
     
-    height: 4vmax;
+    height: 8rem;
     margin-left: 3px;
-    font-size: 2vmax;
+    font-size: 2.5rem;
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
@@ -75,7 +75,7 @@
 }
 
 .cardbtn{
-    font-size: 1.3vmax;
+    font-size: 2rem;
     background-color: #86F8EA;
     padding:5px 15px;
     display: flex;
@@ -85,21 +85,58 @@
 
 }
 
-@media screen and (max-width: 500px){
+@media screen and (min-width:320px)and (max-width:768px){
+    .productheading{
+        margin: 0;
+    }
     .productlist{
         display: grid;
         grid-template-columns: repeat(2,1fr);
         place-items: center;
-        height: 75vh;
+        height: 80vh;
+        
+      
     }
     .productcartdetail p{
         
-        width: 20vmin;
+        width: 25vmin;
+        
+    }
+    .productheading{
+        font-size: 3vmax;
+        width: 38rem;
+        height: 8rem;
+    }
+    .productcard{
+        height: 58rem;
+        width: 35rem;
+       
         
     }
     .productcartdetail{
-        margin-top: 15px;
-        margin-left: 5px;
+       
+       
+       margin: 0;
+       font-size: 3vmax;
+       height: fit-content;
+       margin-top: 10px;
+    }
+    .productcartdetail p{
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+    }
+    .cardimg{
+        background-color:white;
+        width: 100%;
+        height:80%;
+        transition: all 0.5s;
+        
+        
+    }
+    .cardbtn{
+        display: none;
+        font-size: 2vmax;
     }
 
     }

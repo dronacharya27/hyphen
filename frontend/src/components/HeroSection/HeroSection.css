@@ -85,17 +85,19 @@
     }
     .heading{
         width: 100%;
-        font-size: 15rem;
+        font-size: 9vmax;
         margin: 0;
     }
     .subhead{
         width: 80%;
-        font-size: 3rem;
+        font-size: 2vmax;
    
     }
     .background img{
     width: 50%;
      
     }
-    
+    .herobtn{
+        font-size: 2vmax;
+    }
 }
