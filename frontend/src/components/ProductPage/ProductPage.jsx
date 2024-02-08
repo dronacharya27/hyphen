@@ -42,7 +42,7 @@ useEffect(()=>{
 },[products,productpage])
 
 
-    const product  = products.find((e)=>e.id==params.id)
+   
     const navigate =useNavigate()
  
 
@@ -196,10 +196,10 @@ useEffect(()=>{
             </div>
             <div className="productactions">
             <div className="actions">
-                <button className="btn" onClick={()=>{add_to_cart(params.id,product), navigate('/checkout')}}>Buy Now</button>
+                <button className="btn" onClick={()=>{add_to_cart(params.id,products.find((e)=>e.id==params.id)), navigate('/checkout')}}>Buy Now</button>
               </div>
               <div className="actions">
-                <button className="btn cartbtn" onClick={()=>add_to_cart(params.id,product)}>Add to cart</button>
+                <button className="btn cartbtn" onClick={()=>add_to_cart(params.id,products.find((e)=>e.id==params.id))}>Add to cart</button>
               </div>
               
             </div>
