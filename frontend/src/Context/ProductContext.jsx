@@ -5,9 +5,9 @@ import { useEffect } from 'react'
 import { useQuery, useQueryClient } from 'react-query'
 import { useLoginDataContext } from './LoginContext'
 const ProductContext = createContext()
-const initialdata = {products:[]}
+// const initialdata = {products:[]}
 const ProductProvider = ({children}) => {
-    const[state,dispatch] = useReducer(ProductReducer,initialdata)
+    // const[state,dispatch] = useReducer(ProductReducer,initialdata)
     
     const {progress, setProgress} = useLoginDataContext()
     const getproductcache = async()=>{
@@ -16,8 +16,9 @@ const ProductProvider = ({children}) => {
       console.log(res);
       return res
     }
-    const {data:products,isError,isLoading} = useQuery({queryKey:['products'],queryFn: getproductcache,staleTime:10000,cacheTime:100000})
     
+    const {data:products,isError,isLoading} = useQuery({queryKey:['products'],queryFn: getproductcache,staleTime:10000,cacheTime:100000})
+    console.log(products)
     
    
     

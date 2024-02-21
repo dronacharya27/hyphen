@@ -38,7 +38,7 @@ const HeroSection = () => {
                 <div className="slideshow">
                 <Zoom arrows={false} duration={3000} responsive={responsiveSettings}>
                 <div className="background">
-                    <img src="/HeroImage/HeroKriti.png"/>
+                    <img src="/HeroImage/kritiback.webp"/>
                 </div>
             
                 <div className="background">
