@@ -250,6 +250,13 @@
     transition: 300ms color !important;
 }
 
+.eroorproductpage{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+   
+}
+
 @media screen and (min-width:320px)and (max-width:768px)  {
     .productpage{
         display: flex;

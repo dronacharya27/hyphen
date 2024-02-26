@@ -72,7 +72,7 @@ useEffect(()=>{
         <div className="productleft productleftinitial">
           <div className="productimage">
           {
-        isLoading?<h1><ColorRing
+        isLoading?<h1 className="eroorproductpage"><ColorRing
         visible={true}
         height="80"
         width="80"
@@ -80,7 +80,7 @@ useEffect(()=>{
         wrapperStyle={{}}
         wrapperClass="color-ring-wrapper"
         colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-        /></h1>:isError?<h1>error</h1>:
+        /></h1>:isError?<h1 className="eroorproductpage">error</h1>:
         <>
      
          <img className="proimg" src={Image} alt="" />
@@ -90,15 +90,7 @@ useEffect(()=>{
             
           </div>
           {
-        isLoading?<h1><ColorRing
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="color-ring-loading"
-        wrapperStyle={{}}
-        wrapperClass="color-ring-wrapper"
-        colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-        /></h1>:isError?<h1>error</h1>:
+        isLoading?<></>:isError?<h1> <></></h1>:
           <div className="productimagelist">
           
         {products.find((e)=>e.id==params.id).product_img.map((e,index) => (
@@ -132,7 +124,7 @@ useEffect(()=>{
         wrapperStyle={{}}
         wrapperClass="color-ring-wrapper"
         colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-        /></h1>:isError?<h1>error</h1>:
+        /></h1>:isError?<h1  >error</h1>:
         <div className="productdetailpage">
             <div className="productname">
               
