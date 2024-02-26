@@ -9,7 +9,9 @@ import { CartProvider } from './Context/CartContext.jsx'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { CookiesProvider } from 'react-cookie';
 import { OrderContextProvider } from './Context/OrderContext.jsx'
+import { Analytics } from "@vercel/analytics/react"
 const queryClient = new QueryClient()
+
 ReactDOM.createRoot(document.getElementById('root')).render(
     // <React.StrictMode>
 <QueryClientProvider client={queryClient}>

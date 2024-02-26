@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { Analytics } from "@vercel/analytics/react"
 import Checkout from './components/Checkout/Checkout'
 import ProductPage from './components/ProductPage/ProductPage'
 import {BrowserRouter as Router, Route,Routes} from 'react-router-dom'
