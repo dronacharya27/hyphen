@@ -13,7 +13,8 @@ const App = () => {
 
     <>
     <div>
-    
+    <Analytics/>
+        <SpeedInsights/>
       <Router>
       <Routes>
         
